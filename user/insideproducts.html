@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>Adtech</title>
+		<link rel="stylesheet" href="../bootstrap/bootstrap.css">
+		<script src="../bootstrap/jquery.min.js"></script>
+		<script src="../bootstrap/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../css/slideshow.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">
+		<script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+	</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-exande="false" aria-controls="navbar">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Adtech</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">	
+					<li><a href="homepage.html">Home</a></li>
+					<li><a href="insideproducts.html">Browse Products</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#" onclick="logout()">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" style="min-height: 500px;" id="products">
+		<h2 style="text-shadow: 1px 2px 1px #000; color:white;" class="text-center">Adtech Sales and Services</h2>
+ 	     <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-shopping-cart"></span> Open Cart</button><br>
+		<!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title text-center">Your cart</h4>
+		        </div>
+		        <div class="modal-body">
+				<div class="table-responsive">
+				<table class="table" id="cart_contents">
+				</table>
+				</div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		<!-- End of Modal -->
+		<div class="well" style="background-color: #808080; border: 1px solid #808080 ">
+			<div class="row">
+				<div class="col-sm-12">
+					<h4 class="text-center" style="color: white;">Products Available</h4>
+					<div class="panel-group" id="accordion" >
+					  <div class="panel panel-primary">
+					    <div class="panel-heading">
+					      <h4 class="panel-title text-center">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#Mouse" style ="display: block; text-decoration: none;">
+					        Mouse</a>
+					      </h4>
+					    </div>
+					    <div id="Mouse" class="panel-collapse collapse">
+					      <div class="panel-body" id="mousedisplay">
+						<img src="../image/loading.gif" alt="" class="img-responsive" >
+					      </div>
+					    </div>
+					  </div><!--Mouse-->
+					  <div class="panel panel-primary">
+					    <div class="panel-heading">
+					      <h4 class="panel-title text-center">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#Keyboards" style ="display: block; text-decoration: none;">
+					       Keyboards</a>
+					      </h4>
+					    </div>
+					    <div id="Keyboards" class="panel-collapse collapse">
+					      <div class="panel-body" id = "keydisplay">
+							<img src="../image/loading.gif" alt="" class="img-responsive" >
+					      </div>
+					    </div>
+					  </div><!--Keyboards-->
+					  <div class="panel panel-primary">
+					    <div class="panel-heading">
+					      <h4 class="panel-title text-center">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#Headsets" style ="display: block; text-decoration: none;">
+					       Headsets</a>
+					      </h4>
+					    </div>
+					    <div id="Headsets" class="panel-collapse collapse">
+					      <div class="panel-body" id="headsetdisplay">
+							<img src="../image/loading.gif" alt="" class="img-responsive" >
+					      </div>
+					    </div>
+					  </div><!--Headsets-->
+					  <div class="panel panel-primary">
+					    <div class="panel-heading">
+					      <h4 class="panel-title text-center">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#MousePads" style ="display: block; text-decoration: none;">
+					       MousePads</a>
+					      </h4>
+					    </div>
+					    <div id="MousePads" class="panel-collapse collapse">
+					      <div class="panel-body" id = "mousepaddisplay">
+							<img src="../image/loading.gif" alt="" class="img-responsive" >			
+					      </div>
+					    </div>
+					  </div><!--MousePads-->
+					</div>		
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid footer text-center" style="position: inherit; bottom: 0; z-index: 1">
+		<br>
+		<p style="color:#f2f2f2">&copy; sainola Daison | 2016</p>	
+	</div>
+	<script src = "insidejs/Handler.js"></script>
+<script>
+    function logout() {
+		var r = confirm("Are you sure to logout?");
+		if (r == true)
+		{
+			var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+			db.transaction(function (tx)
+			{
+				tx.executeSql('DELETE FROM User;');			
+			},
+				logouterror);
+			location.href = "../index.html";
+		} 
+		else 
+		{
+			
+		}
+    }
+	function logouterror(err) {
+        alert('There is an error in the first function: ' +err.message+ '\nSecond message'+err);
+    }		
+</script>
+</body>
+</html>

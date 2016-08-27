@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sportsbucks KTV Bar</title>
+		<link rel="stylesheet" href="bootstrap/bootstrap.css">
+		<script src="bootstrap/jquery.min.js"></script>
+		<script src="bootstrap/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/slideshow.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script src = "js/Handler.js"></script>
+		<script>
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() 
+		{
+			document.addEventListener("backbutton", onBackKeyDown, false);
+		}
+		function onBackKeyDown(e) {
+			e.preventDefault();
+			var r = confirm("Are you sure to exit?");
+			if (r == true)
+			{
+				navigator.app.exitApp();
+			} 
+		}
+		</script>
+	</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-exande="false" aria-controls="navbar">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Adtech</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">	
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Products.html">Browse Products</a></li>
+					<li><a href="">Contact</a></li>
+					<li><a href="register.html">Register</a></li>	
+					<li><a href="login.html">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" style=" min-height: 502px;">
+		<h2 style="text-shadow: 1px 2px 1px #000; color:white;" class="text-center">Adtech Sales and Services</h2>
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<img src="image/one.jpg" class="img-rounded" style="height: 200px; width: 100%;"> 
+							<div class="carousel-caption">
+								<h5 style="text-shadow: 1px 2px 1px #000; color:white;">Desktops</h5>
+							</div>
+						</div>
+						<div class="item">
+							<img src="image/two.jpg" class="img-rounded" style="height: 200px; width: 100%;">
+							<div class="carousel-caption">
+								<h5 style="text-shadow: 1px 2px 1px #000; color:white;">CPU's</h5>
+							</div>
+						</div>
+						<div class="item">
+							<img src="image/three.jpg" class="img-rounded" style="height: 200px; width: 100%;">
+							<div class="carousel-caption">
+								<h5 style="text-shadow: 1px 2px 1px #000; color:white;">Mousepads</h5>
+							</div>
+						</div>
+						<div class="item">
+							<img src="image/four.jpg" class="img-rounded" style="height: 200px; width: 100%;">
+							<div class="carousel-caption">
+								<h5 style="text-shadow: 1px 2px 1px #000; color:white;">Mouse</h5>
+							</div>
+						</div>
+						<div class="item">
+							<img src="image/five.jpg" class = "img-rounded" style ="height: 200px; width: 100%">
+							<div class="carousel-caption">
+								<h5 style="text-shadow: 1px 2px 1px #000; color:white;">Razer Desktop</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			<p style="font-family:Tahoma; text-align:justify; font-size:12px; margin-top:5px; color: white;">
+				Selling entry level to high-end PC Parts. Accepts Modding, home services, repair and upgrading of PC units and networking. Feel free to call us anytime.
+			</p>		
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid footer text-center" style="position: fixed; bottom: 0;">
+		<br>
+		<p style="color:#f2f2f2">&copy; Sainola Daison | 2016</p>	
+	</div>
+</body>
+</html>
